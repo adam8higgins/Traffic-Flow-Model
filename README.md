@@ -1,207 +1,162 @@
-# 🚗 Traffic Flow Simulation -- Intelligent Driver Model
+# Traffic Flow Model -- Intelligent Driver Model Simulation
 
-Simulation of motorway traffic using the **Intelligent Driver Model
-(IDM)** developed as part of
+This repository contains the **code, animations, and final report** for
+our\
+**MTH3024 Modelling and Simulation** project at **Queen's University
+Belfast**.
 
-**MTH3024 -- Modelling and Simulation**
-School of Mathematics and Physics
-**Queen's University Belfast**
+The project models motorway traffic using the **Intelligent Driver Model
+(IDM)**, a microscopic car‑following model where each vehicle adjusts
+its acceleration based on the distance and relative velocity to the car
+ahead.
 
-This project models how **individual driver behaviour produces
-large-scale traffic patterns**, including congestion, optimal density,
-and flow breakdown.
+The goal of the project is to explore how **simple driver behaviour
+rules lead to large‑scale traffic phenomena**, such as:
 
-------------------------------------------------------------------------
-
-# 🎥 Simulation Videos
-
-## Basic Ring Road Model
-
-Vehicles follow the Intelligent Driver Model on a **circular motorway**.
-
-BasicTraffic.mp4
+-   Free‑flow traffic
+-   Traffic congestion
+-   Shockwaves and stop‑and‑go behaviour
+-   The impact of slip roads on motorway flow
 
 ------------------------------------------------------------------------
 
-## Slip Road Extension
+# Repository Contents
 
-Vehicles can **enter and exit the motorway** via a slip road,
-introducing merging behaviour.
+  -------------------------------------------------------------------------------------------
+  File                                    Description
+  --------------------------------------- ---------------------------------------------------
+  **Traffic_Project_Code.ipynb**          Main Jupyter notebook containing the full
+                                          simulation code
 
-TrafficSimulationWithSlipRoad.mp4
+  **BasicTraffic.mp4**                    Animation of the base ring‑road traffic model
+
+  **TrafficSimulationWithSlipRoad.mp4**   Animation of the slip‑road extension
+
+  **Group5_Traffic_Model.pdf**            Final project report
+
+  **README.md**                           Repository documentation
+  -------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
-# 📊 Project Overview
+# Model Overview
 
-Traffic flow is simulated using the **Intelligent Driver Model**, a
-microscopic car-following model describing how drivers accelerate and
-brake in response to surrounding vehicles.
+The simulation is based on the **Intelligent Driver Model (IDM)**, a
+widely used microscopic traffic model that describes vehicle
+acceleration as
 
-The model demonstrates how microscopic behaviour leads to macroscopic
-traffic patterns such as:
+a = a_max \[ 1 - (v/v_max)\^δ - (s\*/s)\^2 \]
 
--   Free-flow traffic
--   Congestion
--   Shockwave formation
--   Optimal traffic density
+where vehicle acceleration depends on:
 
-The simulation reproduces the **fundamental traffic diagrams** used in
-traffic engineering:
+-   desired speed
+-   safe following distance
+-   distance to the vehicle ahead
+-   relative velocity to the vehicle ahead
+
+This produces realistic traffic behaviour including: - smooth
+acceleration - safe braking - spontaneous traffic jams -
+density‑dependent flow behaviour
+
+------------------------------------------------------------------------
+
+# Simulation 1 --- Ring Road Traffic
+
+The first model simulates vehicles travelling on a **circular
+motorway**.
+
+Using periodic boundary conditions avoids edge effects and allows
+investigation of the **fundamental diagrams of traffic flow**:
 
 -   Flow vs Density
--   Velocity vs Density
--   Flow vs Velocity
+-   Speed vs Density
+-   Speed vs Flow
 
-These diagrams are used to validate the simulation against known traffic
-theory.
+These diagrams allow us to analyse the transition from **free flow
+traffic to congested traffic**.
 
-------------------------------------------------------------------------
+### Animation
 
-# 🧠 Intelligent Driver Model
-
-The IDM determines vehicle acceleration using:
-
-dv/dt = a \[ 1 − (v / vmax)\^δ − (s\* / s)\^2 \]
-
-where
-
-s\* = s_min + max(0, vT + (v Δv) / (2√ab))
-
-Variables:
-
-  Symbol   Meaning
-  -------- ----------------------
-  v        vehicle speed
-  vmax     desired speed
-  s        headway distance
-  s\*      desired headway
-  a        maximum acceleration
-  b        comfortable braking
-  T        safe time gap
-
-This allows vehicles to:
-
--   accelerate when the road is clear
--   slow when approaching traffic
--   maintain safe following distances.
+```{=html}
+<video src="BasicTraffic.mp4" controls width="700">
+```
+```{=html}
+</video>
+```
 
 ------------------------------------------------------------------------
 
-# 🔵 Simulation 1 -- Basic Ring Road
+# Simulation 2 --- Slip Road Extension
 
-The base model simulates vehicles travelling on a **circular road**.
+The model was extended by introducing a **slip road where vehicles can
+enter the motorway**.
 
-Features:
+Key features include:
 
--   periodic boundary conditions
--   constant number of vehicles
--   identical driver behaviour
--   no inflow or outflow
+-   Vehicles spawn randomly on the slip road with probability **P_in**
+-   Vehicles travel along the slip road using the same IDM rules
+-   Vehicles merge only when a **safe gap exists on the motorway**
+-   Vehicles exit the motorway with probability **P_out**
 
-This produces equilibrium traffic flow and allows construction of the
-**fundamental traffic diagrams**.
+This extension allows investigation of how **merging behaviour
+influences traffic flow and congestion**.
 
-------------------------------------------------------------------------
+### Animation
 
-# 🟢 Simulation 2 -- Slip Road Extension
-
-The model is extended by introducing a **slip road** where vehicles may:
-
--   enter the motorway with probability `Pin`
--   exit with probability `Pout`
--   merge only when a safe gap exists
-
-If a safe gap does not exist, vehicles **queue on the slip road** until
-merging becomes possible.
-
-This allows the simulation of **real motorway merging behaviour**.
+```{=html}
+<video src="TrafficSimulationWithSlipRoad.mp4" controls width="700">
+```
+```{=html}
+</video>
+```
 
 ------------------------------------------------------------------------
 
-# 📈 Key Results
+# Running the Simulation
 
-### Critical Density
+The simulation code is contained in:
 
-Traffic flow increases with density until a **critical density** is
-reached.
+    Traffic_Project_Code.ipynb
 
-Beyond this point:
+### 1. Install dependencies
 
--   congestion forms
--   average velocity drops
--   total traffic flow decreases.
+    pip install numpy matplotlib
 
-------------------------------------------------------------------------
+### 2. Open the notebook
 
-### Slip Road Effects
+Run the notebook in:
 
-Increasing the **length of the slip road**
+-   Jupyter Notebook
+-   JupyterLab
+-   VS Code
 
--   increases the probability that vehicles successfully merge
--   increases the density of the motorway
--   reduces total traffic flow once the system exceeds the critical
-    density.
+### 3. Run the cells in order
 
-------------------------------------------------------------------------
+Running the notebook will:
 
-### Speed Limit Effects
-
-Increasing the speed limit increases flow **up to around 70--80 mph**.
-
-Beyond this point, increases in speed provide **minimal improvements in
-traffic flow** because braking waves become more severe.
+-   simulate traffic dynamics using the IDM
+-   generate traffic data
+-   produce the traffic animations
 
 ------------------------------------------------------------------------
 
-# ⚙️ Running the Simulation
+# Project Report
 
-Install dependencies:
+The full methodology, analysis, and results are available in:
 
-pip install numpy matplotlib
+    Group5_Traffic_Model.pdf
 
-Run the basic model:
+The report contains:
 
-python basic_ring_model.py
-
-Run the slip road model:
-
-python slip_road_model.py
-
-The scripts generate animation videos:
-
-BasicTraffic.mp4\
-traffic_simulation.mp4
+-   Mathematical description of the IDM
+-   Simulation methodology
+-   Fundamental traffic diagrams
+-   Slip road extension analysis
+-   Discussion of traffic flow behaviour
 
 ------------------------------------------------------------------------
 
-# 📂 Repository Structure
+# Authors
 
-Traffic-Flow-Model │ ├── BasicTraffic.mp4 ├── traffic_simulation.mp4 ├──
-basic_ring_model.py ├── slip_road_model.py └── README.md
-
-------------------------------------------------------------------------
-
-# 📚 References
-
-Treiber, M. & Kesting, A.
-Traffic Flow Dynamics: Data, Models and Simulation\
-Springer, 2013
-
-Hoogendoorn, S.
-Traffic Flow Theory and Simulation
-
-Chandler, R. E., Herman, R., & Montroll, E. W.
-Traffic Dynamics: Studies in Car Following
-
-------------------------------------------------------------------------
-
-# 👨‍💻 Authors
-
-Adam Higgins
-Ben Hamilton
-Luke Jackson
-Alex O'Connor
-
-School of Mathematics and Physics
+**Group 5 -- MTH3024 Modelling and Simulation**\
 Queen's University Belfast

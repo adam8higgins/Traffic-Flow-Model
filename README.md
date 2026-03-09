@@ -96,12 +96,7 @@ traffic flow is maximised before congestion begins.
 
 ### Animation
 
-```{=html}
-<video src="BasicTraffic.mp4" controls width="700">
-```
-```{=html}
-</video>
-```
+<video src="BasicTraffic.mp4" controls width="700"></video>
 
 ------------------------------------------------------------------------
 
@@ -125,12 +120,7 @@ compute mean values and standard deviations of traffic flow.
 
 ### Animation
 
-```{=html}
-<video src="TrafficSimulationWithSlipRoad.mp4" controls width="700">
-```
-```{=html}
-</video>
-```
+<video src="TrafficSimulationWithSlipRoad.mp4" controls width="700"></video>
 
 ------------------------------------------------------------------------
 

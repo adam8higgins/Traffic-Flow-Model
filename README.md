@@ -94,9 +94,8 @@ traffic flow**:
 These diagrams reveal the existence of a **critical density** at which
 traffic flow is maximised before congestion begins.
 
-### Animation
-
-<video src="BasicTraffic.mp4" controls width="700"></video>
+### Ring Road Animation
+[![Ring Road Animation](preview_basic.gif)](./BasicTraffic.mp4)
 
 ------------------------------------------------------------------------
 
@@ -118,10 +117,8 @@ performance.
 Simulations were repeated **30 times** for each parameter value to
 compute mean values and standard deviations of traffic flow.
 
-### Animation
-
-<video src="TrafficSimulationWithSlipRoad.mp4" controls width="700"></video>
-
+### Slip Road Animation
+[![Slip Road Animation](preview_sliproad.gif)](./TrafficSimulationWithSlipRoad.mp4)
 ------------------------------------------------------------------------
 
 # Running the Simulation

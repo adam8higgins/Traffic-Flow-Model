@@ -28,7 +28,7 @@ BasicTraffic.mp4
 Vehicles can **enter and exit the motorway** via a slip road,
 introducing merging behaviour.
 
-traffic_simulation.mp4
+TrafficSimulationWithSlipRoad.mp4
 
 ------------------------------------------------------------------------
 

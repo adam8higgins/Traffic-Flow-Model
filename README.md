@@ -3,8 +3,8 @@
 Simulation of motorway traffic using the **Intelligent Driver Model
 (IDM)** developed as part of
 
-**MTH3024 -- Modelling and Simulation**\
-School of Mathematics and Physics\
+**MTH3024 -- Modelling and Simulation**
+School of Mathematics and Physics
 **Queen's University Belfast**
 
 This project models how **individual driver behaviour produces
@@ -41,16 +41,16 @@ brake in response to surrounding vehicles.
 The model demonstrates how microscopic behaviour leads to macroscopic
 traffic patterns such as:
 
--   Free-flow traffic\
--   Congestion\
--   Shockwave formation\
+-   Free-flow traffic
+-   Congestion
+-   Shockwave formation
 -   Optimal traffic density
 
 The simulation reproduces the **fundamental traffic diagrams** used in
 traffic engineering:
 
--   Flow vs Density\
--   Velocity vs Density\
+-   Flow vs Density
+-   Velocity vs Density
 -   Flow vs Velocity
 
 These diagrams are used to validate the simulation against known traffic
@@ -82,8 +82,8 @@ Variables:
 
 This allows vehicles to:
 
--   accelerate when the road is clear\
--   slow when approaching traffic\
+-   accelerate when the road is clear
+-   slow when approaching traffic
 -   maintain safe following distances.
 
 ------------------------------------------------------------------------
@@ -94,9 +94,9 @@ The base model simulates vehicles travelling on a **circular road**.
 
 Features:
 
--   periodic boundary conditions\
--   constant number of vehicles\
--   identical driver behaviour\
+-   periodic boundary conditions
+-   constant number of vehicles
+-   identical driver behaviour
 -   no inflow or outflow
 
 This produces equilibrium traffic flow and allows construction of the
@@ -128,8 +128,8 @@ reached.
 
 Beyond this point:
 
--   congestion forms\
--   average velocity drops\
+-   congestion forms
+-   average velocity drops
 -   total traffic flow decreases.
 
 ------------------------------------------------------------------------
@@ -138,8 +138,8 @@ Beyond this point:
 
 Increasing the **length of the slip road**
 
--   increases the probability that vehicles successfully merge\
--   increases the density of the motorway\
+-   increases the probability that vehicles successfully merge
+-   increases the density of the motorway
 -   reduces total traffic flow once the system exceeds the critical
     density.
 
@@ -184,24 +184,24 @@ basic_ring_model.py ├── slip_road_model.py └── README.md
 
 # 📚 References
 
-Treiber, M. & Kesting, A.\
+Treiber, M. & Kesting, A.
 Traffic Flow Dynamics: Data, Models and Simulation\
 Springer, 2013
 
-Hoogendoorn, S.\
+Hoogendoorn, S.
 Traffic Flow Theory and Simulation
 
-Chandler, R. E., Herman, R., & Montroll, E. W.\
+Chandler, R. E., Herman, R., & Montroll, E. W.
 Traffic Dynamics: Studies in Car Following
 
 ------------------------------------------------------------------------
 
 # 👨‍💻 Authors
 
-Adam Higgins\
-Ben Hamilton\
-Luke Jackson\
+Adam Higgins
+Ben Hamilton
+Luke Jackson
 Alex O'Connor
 
-School of Mathematics and Physics\
+School of Mathematics and Physics
 Queen's University Belfast
